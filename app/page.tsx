@@ -1,95 +1,66 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import ImageSwiper from "@/components/homepage/ImageSwiper";
+import styles from "../styles/HomePage.module.scss";
+import getFileStructure from "@/components/js/ffmpeg";
 
-export default function Home() {
+async function getHeroData() {
+  const relativeHeroImagePath = "/images/swiper";
+  return await getFileStructure(
+    process.cwd() + "/public" + relativeHeroImagePath,
+    relativeHeroImagePath,
+    "20:-1",
+    "1200:-1",
+    100
+  );
+}
+
+export default async function HomePage() {
+  const images = await getHeroData();
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className={styles["c-main-wrapper"]}>
+      <div className={styles["c-homepage-container"]}>
+        <div className={styles["c-homepage-item-1"]}>
+          <ImageSwiper swiperImagePaths={images} />
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        <div className={styles["c-homepage-item-2"]}>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex dolore,
+          rerum nostrum minima optio soluta dolorum similique exercitationem
+          architecto, qui iure quasi nisi modi. Maxime, recusandae placeat?
+          Ratione dicta sapiente asperiores at deleniti illum ab nulla placeat
+          quo. Eaque labore aliquam ipsum mollitia, accusantium unde laboriosam
+          harum iste sapiente enim, amet iure similique excepturi sequi quaerat?
+          Labore sapiente laborum quis voluptates facere atque, ratione libero
+          est alias quo voluptatibus. Cum, qui non? Modi quae molestias iusto ut
+          aliquid repudiandae esse. Aliquid perferendis ratione qui. Dicta
+          sapiente quis quidem eaque iusto quam, accusantium, incidunt ab
+          numquam nisi exercitationem magni commodi! Perferendis aspernatur
+          similique neque quis suscipit asperiores laborum quo iure, consequatur
+          cum expedita laudantium hic quasi animi voluptas. Mollitia atque vel
+          eaque maxime ipsam ea cum eos rem doloremque quisquam facilis neque
+          quas sunt beatae esse magnam, illo expedita laudantium commodi nisi
+          soluta deleniti nulla ab! Tenetur at temporibus illo nam distinctio
+          iste tempore atque voluptatum eum sed veniam, sit vitae officia ipsam
+          molestias veritatis magni. Officia, dolorum accusamus. Natus veniam,
+          ipsa nemo placeat quod aliquam, quidem voluptates enim eveniet minus
+          necessitatibus quas consectetur assumenda aut dignissimos eum
+          expedita. Eveniet doloremque rerum porro quam labore ipsam, obcaecati,
+          temporibus ducimus aliquid aliquam pariatur maxime, vero illum quia
+          animi. Laboriosam quasi nihil voluptatibus enim ut modi id eum totam
+          beatae. Quasi obcaecati libero dolorum ipsa nemo optio sit dolores est
+          quaerat perferendis consectetur esse, nam officiis aliquid quos
+          veritatis fuga explicabo! Sapiente veritatis tempora, facere suscipit
+          autem optio dolorem nesciunt rem! Accusantium sint tenetur quae
+          delectus, voluptates officiis repudiandae! Necessitatibus provident
+          similique quod consequuntur laboriosam atque sunt suscipit,
+          consectetur quia quo et blanditiis recusandae esse iure ducimus dolor
+          minus! Voluptatibus molestias dolorem placeat ipsum libero eius
+          consectetur accusantium ad at modi perspiciatis doloribus maiores
+          deserunt quam necessitatibus voluptate excepturi, iure minima, esse
+          soluta.
+        </div>
+        <div className={styles["c-homepage-item-3"]}>C</div>
+        <div className={styles["c-homepage-item-4"]}>D</div>
       </div>
     </main>
-  )
+  );
 }

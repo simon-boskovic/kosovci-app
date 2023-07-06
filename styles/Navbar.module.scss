@@ -1,0 +1,129 @@
+/* Navbar.module.scss */
+.c-navbar-wrapper {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  left: 0;
+  position: fixed;
+  top: 0;
+  transform: scaleY(1);
+  z-index: 2;
+  transform-origin: top;
+  transition: transform 0.5s, 0.5s;
+}
+
+.c-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 20px;
+
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
+}
+
+.c-logo {
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2a70c;
+  border-radius: 50px;
+  margin-right: 20px;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
+}
+
+.c-menu-toggle-wrap {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+}
+
+.c-menu-toggle-line {
+  width: 34px;
+  height: 2px;
+  background-color: white;
+  margin-bottom: 4px;
+  transition: transform 0.3s ease;
+}
+
+.c-menu-toggle-wrap.c-menu-toggle-wrap--is-open
+  .c-menu-toggle-line:first-child {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.c-menu-toggle-wrap.c-menu-toggle-wrap--is-open
+  .c-menu-toggle-line:nth-child(2) {
+  opacity: 0;
+}
+
+.c-menu-toggle-wrap.c-menu-toggle-wrap--is-open .c-menu-toggle-line:last-child {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.c-menu {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 500px; /* Přizpůsobte hodnotu dle potřeby */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+
+  @media (max-width: 768px) {
+    // display: flex; /* Upraveno na "flex" */
+    max-height: none; /* Upraveno na "none" */
+    display: none;
+  }
+}
+
+.c-menu--open {
+  max-height: 500px; /* Zadejte vhodnou hodnotu */
+}
+
+.c-menu li:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.c-menu-link {
+  color: white;
+  text-decoration: none;
+  transition: text-decoration-color 300ms, text-underline-offset 300ms;
+
+  &:hover {
+    text-decoration-color: rgb(100, 100, 197);
+    text-underline-offset: 0.4em;
+  }
+}
+
+.c-mobile-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+
+  @media (max-width: 768px) {
+    display: none; /* Upraveno na "none" */
+  }
+}
+
+.c-mobile-menu--open {
+  display: flex; /* Přidáno */
+  opacity: 1;
+  max-height: 500px; /* Přizpůsobte hodnotu dle potřeby */
+  @media (min-width: 768px) {
+    display: none; /* Upraveno na "none" */
+  }
+}
