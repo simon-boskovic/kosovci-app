@@ -1,21 +1,22 @@
+import { ICompressedImages } from "@/app/page";
 import { exec } from "child_process";
 import fs from "fs";
 import fsp from "fs/promises";
 import Path from "path";
 
 export default async function getFileStructure(
-  absolutePath,
-  relativePath,
-  placeholderScale,
-  imageScale,
-  imageQuality
-) {
+  absolutePath: string,
+  relativePath: string,
+  placeholderScale: string,
+  imageScale: string,
+  imageQuality: number
+): Promise<ICompressedImages[]> {
   const compressedDir = `${absolutePath}/compressed`;
   const placeholderFilesDir = compressedDir + "/placeholders";
   const imagesFilesDir = compressedDir + "/images";
 
   return checkDirectoryExists(compressedDir)
-    .then((dirExists) => {
+    .then(async (dirExists) => {
       if (!dirExists) {
         return fsp.mkdir(compressedDir).then(async () => {
           return Promise.all([
@@ -84,27 +85,32 @@ export default async function getFileStructure(
     );
 }
 
-function convertToWebP(inputFile, outputFile, scale, quality) {
+function convertToWebP(
+  inputFile: string,
+  outputFile: string,
+  scale: string,
+  quality: number
+): Promise<boolean> {
   return new Promise((resolve, reject) => {
     const command = `ffmpeg -i ${inputFile} -vf "scale=${scale}:force_original_aspect_ratio=decrease" -c:v libwebp -quality ${quality} ${outputFile}`;
     exec(command, (error) => {
       if (error) {
         reject(error);
       } else {
-        resolve();
+        resolve(true);
       }
     });
   });
 }
 
-function checkFileExists(file) {
+function checkFileExists(file: string): Promise<boolean> {
   return fsp
     .access(file, fs.constants.F_OK)
     .then(() => true)
     .catch(() => false);
 }
 
-function checkDirectoryExists(directory) {
+function checkDirectoryExists(directory: string): Promise<boolean> {
   return fsp
     .access(directory, fs.constants.F_OK)
     .then(() => true)

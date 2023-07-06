@@ -17,8 +17,11 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
 import "swiper/css/zoom";
+import { ICompressedImages } from "@/app/page";
 
-export default function ImageSwiper(props: any) {
+export default function ImageSwiper(props: {
+  swiperImagePaths: ICompressedImages[];
+}) {
   const { swiperImagePaths } = props;
   const imageRef = useRef<HTMLImageElement>(null);
   const swiperRef = useRef<SwiperRef>(null);

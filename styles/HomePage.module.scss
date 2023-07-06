@@ -28,21 +28,18 @@
   grid-column-end: 4;
 }
 .c-homepage-item-2 {
-  background: green;
   @media (max-width: 768px) {
     grid-column-start: 1;
     grid-column-end: 4;
   }
 }
 .c-homepage-item-3 {
-  background: blue;
   @media (max-width: 768px) {
     grid-column-start: 1;
     grid-column-end: 4;
   }
 }
 .c-homepage-item-4 {
-  background: yellow;
   @media (max-width: 768px) {
     grid-column-start: 1;
     grid-column-end: 4;

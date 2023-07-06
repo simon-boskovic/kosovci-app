@@ -1,7 +1,6 @@
 /* Navbar.module.scss */
 .c-navbar-wrapper {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
   left: 0;
   position: fixed;
   top: 0;
@@ -11,10 +10,14 @@
   transition: transform 0.5s, 0.5s;
 }
 
+.c-navbar-wrapper--scrolled {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .c-navbar {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 35px 20px;
 
   @media (max-width: 768px) {

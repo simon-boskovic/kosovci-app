@@ -1,17 +1,31 @@
 // Navbar.js
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../styles/Navbar.module.scss";
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 0);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav className={styles["c-navbar-wrapper"]}>
+    <nav
+      className={`${styles["c-navbar-wrapper"]} ${
+        isScrolled ? styles["c-navbar-wrapper--scrolled"] : ""
+      }`}
+    >
       <div className={styles["c-navbar"]}>
         <div className={styles["c-logo"]}>LOGO KOSOVCI</div>
         <div
