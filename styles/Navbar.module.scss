@@ -8,13 +8,24 @@
   z-index: 2;
   transform-origin: top;
   transition: transform 0.5s, 0.5s;
+  animation: slideDown 0.5s ease forwards; /* Animace při načítání stránky */
+
   @media (max-width: 1025px) {
-    background-color: rgba(0, 0, 0, 0.92) !important;
+    background-color: rgba(#1b1b36, 0.8) !important;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
 .c-navbar-wrapper--scrolled {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(#1b1b36, 0.65);
 }
 
 .c-navbar {

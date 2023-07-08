@@ -10,3 +10,20 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.c-swiper-wrapper {
+  opacity: 0;
+  animation-name: fade-left;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

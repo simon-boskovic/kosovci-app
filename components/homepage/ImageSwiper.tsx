@@ -39,41 +39,42 @@ export default function ImageSwiper(props: {
   };
 
   return (
-    <Swiper
-      ref={swiperRef}
-      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-      spaceBetween={50}
-      slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-    >
-      {swiperImagePaths.map((imgObj, index: number) => (
-        <SwiperSlide key={index}>
-          <div
-            className={styles["c-image-wrapper"]}
-            style={{ backgroundImage: `url(${imgObj.smallImage})` }}
-          >
-            <Image
-              ref={imageRef}
-              loading="lazy"
-              className={styles["c-band-logo"]}
-              style={{
-                objectFit: "cover",
-              }}
-              src={imgObj.image}
-              alt="Band Image"
-              fill
-              onLoad={(ev) => {
-                onImageLoad(ev);
-                onFirstImageLoad();
-              }}
-            />
-          </div>
-
-          <div className="swiper-lazy-preloader"></div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className={styles["c-swiper-wrapper"]}>
+      <Swiper
+        ref={swiperRef}
+        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+      >
+        {swiperImagePaths.map((imgObj, index: number) => (
+          <SwiperSlide key={index}>
+            <div
+              className={styles["c-image-wrapper"]}
+              style={{ backgroundImage: `url(${imgObj.smallImage})` }}
+            >
+              <Image
+                ref={imageRef}
+                loading="lazy"
+                className={styles["c-band-logo"]}
+                style={{
+                  objectFit: "cover",
+                }}
+                src={imgObj.image}
+                alt="Band Image"
+                fill
+                onLoad={(ev) => {
+                  onImageLoad(ev);
+                  onFirstImageLoad();
+                }}
+              />
+            </div>
+            <div className="swiper-lazy-preloader"></div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 }

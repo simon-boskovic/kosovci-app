@@ -1,9 +1,9 @@
 import "./globals.css";
 import styles from "../styles/MainLayout.module.scss";
-
 import { Poppins } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import Head from "next/head";
 
 const poppins = Poppins({ subsets: ["devanagari"], weight: "400" });
 

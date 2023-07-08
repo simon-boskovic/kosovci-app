@@ -11,6 +11,24 @@
   }
 }
 
+.c-main-heading {
+  opacity: 0;
+  animation-name: fade-right;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .c-hero-container {
   margin-top: 5rem;
   height: 100%;
@@ -43,6 +61,10 @@
 }
 
 .c-homepage-cta {
+  animation-name: fade-right;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
   margin-top: 2rem;
   margin-bottom: 3rem;
   display: inline-block;

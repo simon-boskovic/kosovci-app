@@ -2,7 +2,7 @@ import ImageSwiper from "@/components/homepage/ImageSwiper";
 import styles from "../styles/HomePage.module.scss";
 import getFileStructure from "@/components/js/ffmpeg";
 import NearestEvents from "@/components/homepage/NearestEvents";
-import Tour, { IYearEvents } from "@/components/homepage/Tour";
+import { IYearEvents } from "@/components/homepage/Tour";
 import path from "path";
 import fsp from "fs/promises";
 import Link from "next/link";
@@ -40,7 +40,9 @@ export default async function HomePage() {
     <main className={styles["c-main-wrapper"]}>
       <div className={styles["c-hero-container"]}>
         <div className={styles["c-homepage-item-1"]}>
-          <h1>Kosovci - Zábavová skupina s dlouholetou historií</h1>
+          <h1 className={styles["c-main-heading"]}>
+            Kosovci - Zábavová skupina s dlouholetou historií
+          </h1>
           <Link href={"#kde-hrajeme"} className={styles["c-homepage-cta"]}>
             Kde Hrajeme
           </Link>
