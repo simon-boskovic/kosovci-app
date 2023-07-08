@@ -16,7 +16,6 @@ const monthsDictionary: { [key: string]: string } = {
 };
 
 export default function NearestEvents(props: { tour: IYearEvents }) {
-  const facebookIconpath = "images/links/facebook.svg";
   let events: IEvent[] | undefined = [];
   let closesEventIndex: number | undefined;
 
@@ -58,7 +57,7 @@ export default function NearestEvents(props: { tour: IYearEvents }) {
 
   return (
     <div>
-      <div className={"c-nearest-events-heading"}>
+      <div style={{ textAlign: "center" }}>
         <h2>Nejbližší akce</h2>
       </div>
       <EventList events={events} closesEventIndex={closesEventIndex} />

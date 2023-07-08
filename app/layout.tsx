@@ -3,7 +3,7 @@ import styles from "../styles/MainLayout.module.scss";
 
 import { Poppins } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/homepage/Footer";
+import Footer from "@/components/layout/Footer";
 
 const poppins = Poppins({ subsets: ["devanagari"], weight: "400" });
 

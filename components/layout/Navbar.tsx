@@ -4,9 +4,18 @@ import { useEffect, useState } from "react";
 import styles from "../../styles/Navbar.module.scss";
 import Link from "next/link";
 
+export enum EActiveNavSection {
+  AboutBand,
+  Tour,
+  Contact,
+}
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeNavSection, setActiveNavSection] = useState(
+    EActiveNavSection.Tour
+  );
 
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 0);
@@ -49,16 +58,24 @@ export default function Navbar() {
             <Link
               href="/#o-kapele"
               scroll={false}
-              className={styles["c-menu-link"]}
+              onClick={() => setActiveNavSection(EActiveNavSection.AboutBand)}
+              className={`${styles["c-menu-link"]} ${
+                activeNavSection === EActiveNavSection.AboutBand &&
+                styles["c-menu-link--active"]
+              }`}
             >
               Kapela
             </Link>
           </li>
           <li>
             <Link
+              onClick={() => setActiveNavSection(EActiveNavSection.Tour)}
               href="/#kde-hrajeme"
               scroll={false}
-              className={styles["c-menu-link"]}
+              className={`${styles["c-menu-link"]} ${
+                activeNavSection === EActiveNavSection.Tour &&
+                styles["c-menu-link--active"]
+              }`}
             >
               Kde hrajeme
             </Link>
@@ -67,7 +84,11 @@ export default function Navbar() {
             <Link
               href="/#kontakt"
               scroll={false}
-              className={styles["c-menu-link"]}
+              onClick={() => setActiveNavSection(EActiveNavSection.Contact)}
+              className={`${styles["c-menu-link"]} ${
+                activeNavSection === EActiveNavSection.Contact &&
+                styles["c-menu-link--active"]
+              }`}
             >
               Kontakt
             </Link>
@@ -82,30 +103,48 @@ export default function Navbar() {
         <ul>
           <li>
             <Link
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                setIsMenuOpen(false);
+                setActiveNavSection(EActiveNavSection.AboutBand);
+              }}
               href="/#o-kapele"
               scroll={false}
-              className={styles["c-mobile-menu-link"]}
+              className={`${styles["c-mobile-menu-link"]} ${
+                activeNavSection === EActiveNavSection.AboutBand &&
+                styles["c-menu-link--active"]
+              }`}
             >
               O kapele
             </Link>
           </li>
           <li>
             <Link
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                setIsMenuOpen(false);
+                setActiveNavSection(EActiveNavSection.Tour);
+              }}
               href="/#kde-hrajeme"
               scroll={false}
-              className={styles["c-mobile-menu-link"]}
+              className={`${styles["c-mobile-menu-link"]} ${
+                activeNavSection === EActiveNavSection.Tour &&
+                styles["c-menu-link--active"]
+              }`}
             >
               Kde hrajeme
             </Link>
           </li>
           <li>
             <Link
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                setIsMenuOpen(false);
+                setActiveNavSection(EActiveNavSection.Contact);
+              }}
               href="/#kontakt"
               scroll={false}
-              className={styles["c-mobile-menu-link"]}
+              className={`${styles["c-mobile-menu-link"]} ${
+                activeNavSection === EActiveNavSection.Contact &&
+                styles["c-menu-link--active"]
+              }`}
             >
               Kontakt
             </Link>

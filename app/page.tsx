@@ -5,6 +5,8 @@ import NearestEvents from "@/components/homepage/NearestEvents";
 import Tour, { IYearEvents } from "@/components/homepage/Tour";
 import path from "path";
 import fsp from "fs/promises";
+import Link from "next/link";
+import ContentWrapper from "@/components/homepage/ContentWrapper";
 
 export interface ICompressedImages {
   image: string;
@@ -38,10 +40,10 @@ export default async function HomePage() {
     <main className={styles["c-main-wrapper"]}>
       <div className={styles["c-hero-container"]}>
         <div className={styles["c-homepage-item-1"]}>
-          <h1>
-            Kosovci - Legendární zábavná skupina s dlouholetou historií, která
-            rozvíjí tradici hudby a zábavy
-          </h1>
+          <h1>Kosovci - Zábavová skupina s dlouholetou historií</h1>
+          <Link href={"#kde-hrajeme"} className={styles["c-homepage-cta"]}>
+            Kde Hrajeme
+          </Link>
         </div>
         <div className={styles["c-homepage-item-2"]}>
           <ImageSwiper swiperImagePaths={images} />
@@ -52,7 +54,7 @@ export default async function HomePage() {
           <NearestEvents tour={tour} />
         </div>
         <div className={styles["c-homepage-item-4"]}>
-          {<Tour tour={tour} />}
+          <ContentWrapper tour={tour}></ContentWrapper>
         </div>
         <div className={styles["c-homepage-item-5"]}>
           <h2>Aktuality</h2>

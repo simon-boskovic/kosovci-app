@@ -1,5 +1,6 @@
 import styles from "@/styles/Tour.module.scss";
 import EventList from "./EventList";
+import { useEffect } from "react";
 
 export interface IEvent {
   date: string;

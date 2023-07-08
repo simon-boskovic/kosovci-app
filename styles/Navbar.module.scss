@@ -8,7 +8,7 @@
   z-index: 2;
   transform-origin: top;
   transition: transform 0.5s, 0.5s;
-  @media (max-width: 768px) {
+  @media (max-width: 1025px) {
     background-color: rgba(0, 0, 0, 0.92) !important;
   }
 }
@@ -35,7 +35,7 @@
   border-radius: 50px;
   margin-right: 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1025px) {
     margin-right: 0;
   }
 }
@@ -43,7 +43,7 @@
 .c-menu-toggle-wrap {
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1025px) {
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -82,7 +82,7 @@
   overflow: hidden;
   transition: max-height 0.3s ease;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1025px) {
     // display: flex; /* Upraveno na "flex" */
     max-height: none; /* Upraveno na "none" */
     display: none;
@@ -101,17 +101,24 @@
   color: white;
   text-decoration: none;
   position: relative;
-  transition: text-decoration-color 300ms, text-underline-offset 300ms;
+}
 
-  &:hover,
-  &:focus,
-  &:active {
-    text-decoration: underline;
-    text-decoration-color: rgb(100, 100, 197);
+.c-menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: rgb(100, 100, 197);
+  transition: width 300ms;
+}
 
-    text-underline-offset: 0.4em;
-    padding-bottom: 4px;
-  }
+.c-menu-link:hover::after,
+.c-menu-link:focus::after,
+.c-menu-link:active::after,
+.c-menu-link.c-menu-link--active::after {
+  width: 100%;
 }
 
 .c-mobile-menu ul {
@@ -149,7 +156,31 @@
   display: flex;
   opacity: 1;
   max-height: 500px;
-  @media (min-width: 768px) {
+  @media (min-width: 1025px) {
     display: none;
   }
+}
+
+.c-mobile-menu-link {
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.c-mobile-menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: rgb(100, 100, 197);
+  transition: width 300ms;
+}
+
+.c-mobile-menu-link:hover::after,
+.c-mobile-menu-link:focus::after,
+.c-mobile-menu-link:active::after,
+.c-mobile-menu-link.c-menu-link--active::after {
+  width: 100%;
 }
