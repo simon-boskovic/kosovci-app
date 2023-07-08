@@ -8,15 +8,20 @@ html {
   scroll-behavior: smooth !important;
 }
 
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
 body {
   background-color: black;
   color: white;
 }
 
 h1 {
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 1.2;
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 2.9rem;
   margin-bottom: 16px;
 }
 

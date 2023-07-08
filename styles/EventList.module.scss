@@ -1,0 +1,24 @@
+.c-events-heading {
+  text-align: center;
+}
+
+.c-events {
+  margin-top: 3rem;
+}
+.c-event-item {
+  margin-top: 1rem;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.c-event-item:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.c-event-item--nearest {
+  background-color: rgba(#0cbaba, 0.4);
+}

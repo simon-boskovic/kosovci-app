@@ -8,6 +8,9 @@
   z-index: 2;
   transform-origin: top;
   transition: transform 0.5s, 0.5s;
+  @media (max-width: 768px) {
+    background-color: rgba(0, 0, 0, 0.92) !important;
+  }
 }
 
 .c-navbar-wrapper--scrolled {
@@ -19,10 +22,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 35px 20px;
-
-  @media (max-width: 768px) {
-    justify-content: space-between;
-  }
+  max-width: 80rem;
+  margin: auto;
 }
 
 .c-logo {
@@ -93,18 +94,29 @@
 }
 
 .c-menu li:not(:last-child) {
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 .c-menu-link {
   color: white;
   text-decoration: none;
+  position: relative;
   transition: text-decoration-color 300ms, text-underline-offset 300ms;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
     text-decoration-color: rgb(100, 100, 197);
+
     text-underline-offset: 0.4em;
+    padding-bottom: 4px;
   }
+}
+
+.c-mobile-menu ul {
+  width: 100%;
+  text-align: center;
 }
 
 .c-mobile-menu {
@@ -116,17 +128,28 @@
   opacity: 0;
   max-height: 0;
   transition: opacity 0.3s ease, max-height 0.3s ease;
+  margin-top: 10px;
 
-  @media (max-width: 768px) {
-    display: none; /* Upraveno na "none" */
-  }
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.c-mobile-menu li {
+  margin-top: 1rem;
+  border-bottom: 1px solid white; /* Přidání borderu pod každým prvkem */
+  padding-bottom: 8px; /* Přidání mezery pod každým prvkem */
+}
+
+.c-mobile-menu .c-mobile-menu-link {
+  text-decoration: none;
+  color: white;
+  margin-top: 1rem;
 }
 
 .c-mobile-menu--open {
-  display: flex; /* Přidáno */
+  display: flex;
   opacity: 1;
-  max-height: 500px; /* Přizpůsobte hodnotu dle potřeby */
+  max-height: 500px;
   @media (min-width: 768px) {
-    display: none; /* Upraveno na "none" */
+    display: none;
   }
 }

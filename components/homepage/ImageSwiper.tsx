@@ -48,11 +48,11 @@ export default function ImageSwiper(props: {
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
     >
-      {swiperImagePaths.map((imageObj: any, index: number) => (
+      {swiperImagePaths.map((imgObj, index: number) => (
         <SwiperSlide key={index}>
           <div
             className={styles["c-image-wrapper"]}
-            style={{ backgroundImage: `url(${imageObj.smallImage})` }}
+            style={{ backgroundImage: `url(${imgObj.smallImage})` }}
           >
             <Image
               ref={imageRef}
@@ -61,7 +61,7 @@ export default function ImageSwiper(props: {
               style={{
                 objectFit: "cover",
               }}
-              src={imageObj.image}
+              src={imgObj.image}
               alt="Band Image"
               fill
               onLoad={(ev) => {

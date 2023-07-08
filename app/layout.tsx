@@ -3,6 +3,7 @@ import styles from "../styles/MainLayout.module.scss";
 
 import { Poppins } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/homepage/Footer";
 
 const poppins = Poppins({ subsets: ["devanagari"], weight: "400" });
 
@@ -21,7 +22,7 @@ export default function RootLayout({
       <body className={`${poppins.className} ${styles["c-main-layout"]}`}>
         <Navbar></Navbar>
         <div className={`${styles["c-main-content"]}`}>{children}</div>
-        <div>Footer</div>
+        <Footer />
       </body>
     </html>
   );

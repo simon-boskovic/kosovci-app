@@ -1,0 +1,403 @@
+{
+  "2023": [
+    {
+      "month": "Červenec",
+      "events": [
+        {
+          "date": "01.07.2023",
+          "day": "So",
+          "place": "Újezd u Valaškých Klobouk",
+          "description": "Hasičská zábava",
+          "hasVacation": false,
+          "link": "více"
+        },
+
+        {
+          "date": "08.07.2023",
+          "day": "So",
+          "place": "Slopné - pouťová zábava areál hřiště",
+          "description": "více",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "14.07.2023",
+          "day": "Pá",
+          "place": "Troubky u Přerova",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "15.07.2023",
+          "day": "So",
+          "place": "Všemina myslivecká",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "21.07.2023",
+          "day": "Pá",
+          "place": "Trnava lyžařská zábava",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "22.07.2023",
+          "day": "So",
+          "place": "Tlumačov",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "28.07.2023",
+          "day": "Pá",
+          "place": "Hrajeme sexy blondýně z Hořanska",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "29.07.2023",
+          "day": "So",
+          "place": "Všemina - oslavy 650 let obce",
+          "hasVacation": false,
+          "link": ""
+        }
+      ]
+    },
+    {
+      "month": "Srpen",
+      "events": [
+        {
+          "date": "04.08.2023",
+          "day": "Pá",
+          "place": "",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "05.08.2023",
+          "day": "So",
+          "place": "Provodov",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "11.08.2023",
+          "day": "Pá",
+          "place": "Kvasice - hodová zábava",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "12.08.2023",
+          "day": "So",
+          "place": "Ludkovice",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "18.08.2023",
+          "day": "Pá",
+          "place": "Suchá loz - Hodová zábava",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "19.08.2023",
+          "day": "So",
+          "place": "Vizovické Trnkobraní - Vizovice",
+          "description": "více",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "25.08.2023",
+          "day": "Pá",
+          "place": "",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "26.08.2023",
+          "day": "So",
+          "place": "Rusava - Rusavská 50-ka",
+          "description": "více",
+          "hasVacation": false,
+          "link": ""
+        }
+      ]
+    },
+    {
+      "month": "Září",
+      "events": [
+        {
+          "date": "01.09.2023",
+          "day": "Pá",
+          "place": "",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "02.09.2023",
+          "day": "So",
+          "place": "Bělov",
+          "description": "více",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "08.09.2023",
+          "day": "Pá",
+          "place": "",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "09.09.2023",
+          "day": "So",
+          "place": "Vysoké pole - Hodová zábava",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "16.09.2023",
+          "day": "So",
+          "place": "Moja Svatba",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "30.09.2023",
+          "day": "So",
+          "place": "Sax svatba Slušovice",
+          "description": "více",
+          "hasVacation": false,
+          "link": ""
+        }
+      ]
+    },
+    {
+      "month": "Říjen",
+      "events": [
+        {
+          "date": "06.10.2023",
+          "day": "Pá",
+          "place": "Babice nad Svitavou",
+          "description": "více",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "07.10.2023",
+          "day": "So",
+          "place": "blokace SAX",
+          "description": "více",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "14.10.2023",
+          "day": "So",
+          "place": "Mini blokace Z",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        }
+      ]
+    },
+    {
+      "month": "Listopad",
+      "events": [
+        {
+          "date": "18.11.2023",
+          "day": "So",
+          "place": "Trnava",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        }
+      ]
+    },
+    {
+      "month": "Prosinec",
+      "events": [
+        {
+          "date": "09.12.2023",
+          "day": "So",
+          "place": "Mini Lados",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "15.12.2023",
+          "day": "Pá",
+          "place": "blokace",
+          "description": "více",
+          "hasVacation": false,
+          "link": ""
+        }
+      ]
+    }
+  ],
+  "2024": [
+    {
+      "month": "Leden",
+      "events": [
+        {
+          "date": "13.01.2024",
+          "day": "So",
+          "place": "Slušovice - Farní ples",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "20.01.2024",
+          "day": "So",
+          "place": "Slušovice - ples města",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "27.01.2024",
+          "day": "So",
+          "place": "Hošťálková",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        }
+      ]
+    },
+    {
+      "month": "Únor",
+      "events": [
+        {
+          "date": "02.02.2024",
+          "day": "Pá",
+          "place": "Trnava 19. Lyžařský ples",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "03.02.2024",
+          "day": "So",
+          "place": "Střelná 4. ples \"Po našem\" začátek v 19 hodin",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "09.02.2024",
+          "day": "Pá",
+          "place": "Ratiboř - obecní ples",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "10.02.2024",
+          "day": "So",
+          "place": "Slavičín - hasičský ples",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "17.02.2024",
+          "day": "So",
+          "place": "Fryšták hasičský ples",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "24.02.2024",
+          "day": "So",
+          "place": "Mískovice - fotbalový ples",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        }
+      ]
+    },
+    {
+      "month": "Březen",
+      "events": [
+        {
+          "date": "02.03.2024",
+          "day": "So",
+          "place": "Machú",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        }
+      ]
+    },
+    {
+      "month": "Duben",
+      "events": [
+        {
+          "date": "13.04.2024",
+          "day": "So",
+          "place": "MINI blokace Hovorka",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "20.04.2024",
+          "day": "So",
+          "place": "Moravské Prusy Sax",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "20.04.2024",
+          "day": "So",
+          "place": "Moravské Prusy Sax",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        }
+      ]
+    },
+    {
+      "month": "Květen",
+      "events": [
+        {
+          "date": "24.05.2024",
+          "day": "Pá",
+          "place": "Záhlinice - Festival Pod Komínem",
+          "description": "",
+          "hasVacation": false,
+          "link": ""
+        },
+        {
+          "date": "25.05.2024",
+          "day": "So",
+          "place": "Ratiboř - Gulášový král - myslivecký areál",
+          "description": "více",
+          "hasVacation": false,
+          "link": ""
+        }
+      ]
+    }
+  ]
+}

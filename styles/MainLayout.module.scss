@@ -1,15 +1,18 @@
 $navbar-height: 95px;
 .c-main-layout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #0cbaba;
-  background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+  background-image: linear-gradient(
+    to bottom left,
+    #312550 0%,
+    #0d1224 50%,
+    #0d1224 100%
+  );
+  background-attachment: fixed;
+  background-size: cover;
   height: 100%;
 }
 
 .c-main-content {
   width: 100%;
-  margin-top: $navbar-height;
+  margin-top: 145px;
   height: 100%;
 }

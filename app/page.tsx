@@ -1,6 +1,10 @@
 import ImageSwiper from "@/components/homepage/ImageSwiper";
 import styles from "../styles/HomePage.module.scss";
 import getFileStructure from "@/components/js/ffmpeg";
+import NearestEvents from "@/components/homepage/NearestEvents";
+import Tour, { IYearEvents } from "@/components/homepage/Tour";
+import path from "path";
+import fsp from "fs/promises";
 
 export interface ICompressedImages {
   image: string;
@@ -18,52 +22,40 @@ async function getSwiperImages(): Promise<ICompressedImages[]> {
   );
 }
 
+async function getAllEvents(): Promise<IYearEvents> {
+  const tourDataPath = path.join(process.cwd(), "data", "tour-data.json");
+
+  return await fsp
+    .readFile(tourDataPath, "utf-8")
+    .then((res) => JSON.parse(res));
+}
+
 export default async function HomePage() {
   const images = await getSwiperImages();
+  const tour = await getAllEvents();
+
   return (
     <main className={styles["c-main-wrapper"]}>
-      <div className={styles["c-homepage-container"]}>
+      <div className={styles["c-hero-container"]}>
         <div className={styles["c-homepage-item-1"]}>
-          <ImageSwiper swiperImagePaths={images} />
+          <h1>
+            Kosovci - Legendární zábavná skupina s dlouholetou historií, která
+            rozvíjí tradici hudby a zábavy
+          </h1>
         </div>
         <div className={styles["c-homepage-item-2"]}>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex dolore,
-          rerum nostrum minima optio soluta dolorum similique exercitationem
-          architecto, qui iure quasi nisi modi. Maxime, recusandae placeat?
-          Ratione dicta sapiente asperiores at deleniti illum ab nulla placeat
-          quo. Eaque labore aliquam ipsum mollitia, accusantium unde laboriosam
-          harum iste sapiente enim, amet iure similique excepturi sequi quaerat?
-          Labore sapiente laborum quis voluptates facere atque, ratione libero
-          est alias quo voluptatibus. Cum, qui non? Modi quae molestias iusto ut
-          aliquid repudiandae esse. Aliquid perferendis ratione qui. Dicta
-          sapiente quis quidem eaque iusto quam, accusantium, incidunt ab
-          soluta.
+          <ImageSwiper swiperImagePaths={images} />
         </div>
+      </div>
+      <div className={styles["c-homepage-container"]}>
         <div className={styles["c-homepage-item-3"]}>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex dolore,
-          rerum nostrum minima optio soluta dolorum similique exercitationem
-          architecto, qui iure quasi nisi modi. Maxime, recusandae placeat?
-          Ratione dicta sapiente asperiores at deleniti illum ab nulla placeat
-          quo. Eaque labore aliquam ipsum mollitia, accusantium unde laboriosam
-          harum iste sapiente enim, amet iure similique excepturi sequi quaerat?
-          Labore sapiente laborum quis voluptates facere atque, ratione libero
-          est alias quo voluptatibus. Cum, qui non? Modi quae molestias iusto ut
-          aliquid repudiandae esse. Aliquid perferendis ratione qui. Dicta
-          sapiente quis quidem eaque iusto quam, accusantium, incidunt ab
-          soluta.
+          <NearestEvents tour={tour} />
         </div>
         <div className={styles["c-homepage-item-4"]}>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex dolore,
-          rerum nostrum minima optio soluta dolorum similique exercitationem
-          architecto, qui iure quasi nisi modi. Maxime, recusandae placeat?
-          Ratione dicta sapiente asperiores at deleniti illum ab nulla placeat
-          quo. Eaque labore aliquam ipsum mollitia, accusantium unde laboriosam
-          harum iste sapiente enim, amet iure similique excepturi sequi quaerat?
-          Labore sapiente laborum quis voluptates facere atque, ratione libero
-          est alias quo voluptatibus. Cum, qui non? Modi quae molestias iusto ut
-          aliquid repudiandae esse. Aliquid perferendis ratione qui. Dicta
-          sapiente quis quidem eaque iusto quam, accusantium, incidunt ab
-          soluta.
+          {<Tour tour={tour} />}
+        </div>
+        <div className={styles["c-homepage-item-5"]}>
+          <h2>Aktuality</h2>
         </div>
       </div>
     </main>

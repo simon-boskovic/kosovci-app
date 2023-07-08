@@ -2,6 +2,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "../../styles/Navbar.module.scss";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,6 +13,7 @@ export default function Navbar() {
   };
 
   useEffect(() => {
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -44,19 +46,31 @@ export default function Navbar() {
           }`}
         >
           <li>
-            <a href="#o-kapele" className={styles["c-menu-link"]}>
-              O kapele
-            </a>
+            <Link
+              href="/#o-kapele"
+              scroll={false}
+              className={styles["c-menu-link"]}
+            >
+              Kapela
+            </Link>
           </li>
           <li>
-            <a href="#kde-hrajeme" className={styles["c-menu-link"]}>
+            <Link
+              href="/#kde-hrajeme"
+              scroll={false}
+              className={styles["c-menu-link"]}
+            >
               Kde hrajeme
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#kontakt" className={styles["c-menu-link"]}>
+            <Link
+              href="/#kontakt"
+              scroll={false}
+              className={styles["c-menu-link"]}
+            >
               Kontakt
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -65,9 +79,38 @@ export default function Navbar() {
           isMenuOpen ? styles["c-mobile-menu--open"] : ""
         }`}
       >
-        <div>O kapele</div>
-        <div>Kde hrajeme</div>
-        <div>Kontakt</div>
+        <ul>
+          <li>
+            <Link
+              onClick={() => setIsMenuOpen(false)}
+              href="/#o-kapele"
+              scroll={false}
+              className={styles["c-mobile-menu-link"]}
+            >
+              O kapele
+            </Link>
+          </li>
+          <li>
+            <Link
+              onClick={() => setIsMenuOpen(false)}
+              href="/#kde-hrajeme"
+              scroll={false}
+              className={styles["c-mobile-menu-link"]}
+            >
+              Kde hrajeme
+            </Link>
+          </li>
+          <li>
+            <Link
+              onClick={() => setIsMenuOpen(false)}
+              href="/#kontakt"
+              scroll={false}
+              className={styles["c-mobile-menu-link"]}
+            >
+              Kontakt
+            </Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );
