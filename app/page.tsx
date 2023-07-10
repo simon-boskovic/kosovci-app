@@ -43,8 +43,12 @@ export default async function HomePage() {
           <h1 className={styles["c-main-heading"]}>
             Kosovci - Zábavová skupina s dlouholetou historií
           </h1>
-          <Link href={"#kde-hrajeme"} className={styles["c-homepage-cta"]}>
-            Kde Hrajeme
+          <Link
+            href={"#nejblizsi-akce"}
+            scroll={true}
+            className={styles["c-homepage-cta"]}
+          >
+            Nejbližší akce
           </Link>
         </div>
         <div className={styles["c-homepage-item-2"]}>

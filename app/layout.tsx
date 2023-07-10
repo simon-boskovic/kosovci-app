@@ -5,7 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Head from "next/head";
 
-const poppins = Poppins({ subsets: ["devanagari"], weight: "400" });
+const poppins = Poppins({ subsets: ["devanagari"], weight: ["400", "700"] });
 
 export const metadata = {
   title: "Create Next App",

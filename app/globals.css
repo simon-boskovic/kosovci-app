@@ -37,6 +37,9 @@ h3 {
   line-height: 1.4;
   margin-bottom: 8px;
 }
+strong {
+  font-weight: 900;
+}
 
 h4 {
   font-size: 18px;

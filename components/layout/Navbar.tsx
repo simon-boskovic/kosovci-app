@@ -3,11 +3,12 @@
 import { useEffect, useState } from "react";
 import styles from "../../styles/Navbar.module.scss";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 export enum EActiveNavSection {
-  AboutBand,
-  Tour,
-  Contact,
+  AboutBand = 1,
+  Tour = 2,
+  Contact = 3,
 }
 
 export default function Navbar() {
@@ -16,6 +17,13 @@ export default function Navbar() {
   const [activeNavSection, setActiveNavSection] = useState(
     EActiveNavSection.Tour
   );
+  const searchParams = useSearchParams();
+
+  const activeSectionHandler: { [key: string]: EActiveNavSection } = {
+    ["kde-hrajeme"]: EActiveNavSection.Tour,
+    ["kontakt"]: EActiveNavSection.Contact,
+    ["o-kapele"]: EActiveNavSection.AboutBand,
+  };
 
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 0);
@@ -26,6 +34,14 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const hash = window.location.hash.split("#")[1];
+    const section = activeSectionHandler[hash];
+    if (hash && section) {
+      setActiveNavSection(section);
+    }
+  }, [searchParams]);
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -57,8 +73,7 @@ export default function Navbar() {
           <li>
             <Link
               href="/#o-kapele"
-              scroll={false}
-              onClick={() => setActiveNavSection(EActiveNavSection.AboutBand)}
+              scroll={true}
               className={`${styles["c-menu-link"]} ${
                 activeNavSection === EActiveNavSection.AboutBand &&
                 styles["c-menu-link--active"]
@@ -69,9 +84,8 @@ export default function Navbar() {
           </li>
           <li>
             <Link
-              onClick={() => setActiveNavSection(EActiveNavSection.Tour)}
               href="/#kde-hrajeme"
-              scroll={false}
+              scroll={true}
               className={`${styles["c-menu-link"]} ${
                 activeNavSection === EActiveNavSection.Tour &&
                 styles["c-menu-link--active"]
@@ -83,8 +97,7 @@ export default function Navbar() {
           <li>
             <Link
               href="/#kontakt"
-              scroll={false}
-              onClick={() => setActiveNavSection(EActiveNavSection.Contact)}
+              scroll={true}
               className={`${styles["c-menu-link"]} ${
                 activeNavSection === EActiveNavSection.Contact &&
                 styles["c-menu-link--active"]
@@ -105,10 +118,9 @@ export default function Navbar() {
             <Link
               onClick={() => {
                 setIsMenuOpen(false);
-                setActiveNavSection(EActiveNavSection.AboutBand);
               }}
               href="/#o-kapele"
-              scroll={false}
+              scroll={true}
               className={`${styles["c-mobile-menu-link"]} ${
                 activeNavSection === EActiveNavSection.AboutBand &&
                 styles["c-menu-link--active"]
@@ -121,10 +133,9 @@ export default function Navbar() {
             <Link
               onClick={() => {
                 setIsMenuOpen(false);
-                setActiveNavSection(EActiveNavSection.Tour);
               }}
               href="/#kde-hrajeme"
-              scroll={false}
+              scroll={true}
               className={`${styles["c-mobile-menu-link"]} ${
                 activeNavSection === EActiveNavSection.Tour &&
                 styles["c-menu-link--active"]
@@ -137,10 +148,9 @@ export default function Navbar() {
             <Link
               onClick={() => {
                 setIsMenuOpen(false);
-                setActiveNavSection(EActiveNavSection.Contact);
               }}
               href="/#kontakt"
-              scroll={false}
+              scroll={true}
               className={`${styles["c-mobile-menu-link"]} ${
                 activeNavSection === EActiveNavSection.Contact &&
                 styles["c-menu-link--active"]

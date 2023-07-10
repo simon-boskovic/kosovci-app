@@ -24,7 +24,7 @@ export default function Tour(props: { tour: IYearEvents }) {
   const { tour } = props;
   return (
     <div>
-      <div className={styles["c-tour-heading"]}>
+      <div className={styles["c-tour-heading"]} id="kde-hrajeme">
         <h2>Kde hrajeme</h2>
       </div>
       {Object.keys(tour).map((year) => {
