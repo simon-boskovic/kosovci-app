@@ -1,5 +1,8 @@
 .c-about-band-heading {
   text-align: center;
+  @media (max-width: 1025px) {
+    margin-top: 4rem;
+  }
 }
 .c-about-band-text {
   padding: 20px;

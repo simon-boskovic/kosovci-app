@@ -1,5 +1,8 @@
 .c-tour-heading {
   text-align: center;
+  @media (max-width: 1025px) {
+    margin-top: 4rem;
+  }
 }
 
 .c-tour-wrapper {

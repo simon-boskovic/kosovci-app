@@ -4,9 +4,15 @@
 }
 
 .c-contact-form {
-  padding: 20px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .c-contact-form {
+    padding: 0px;
+  }
 }
 
 .c-contact-field {
