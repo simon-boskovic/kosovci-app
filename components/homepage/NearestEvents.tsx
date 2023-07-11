@@ -61,8 +61,6 @@ export default function NearestEvents(props: { tour: IYearEvents }) {
   events = getCurrentMonthEvents();
   closesEventIndex = getClosestEventIndex(events);
 
-  console.log(closesEventIndex);
-
   return (
     <div>
       <div style={{ textAlign: "center" }} id="nejblizsi-akce">

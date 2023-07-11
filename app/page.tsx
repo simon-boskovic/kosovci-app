@@ -36,6 +36,8 @@ export default async function HomePage() {
   const images = await getSwiperImages();
   const tour = await getAllEvents();
 
+  // throw new Error("Bazinga!");
+
   return (
     <main className={styles["c-main-wrapper"]}>
       <div className={styles["c-hero-container"]}>
