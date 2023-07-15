@@ -32,7 +32,10 @@ export default function NearestEvents(props: { tour: IYearEvents }) {
   };
   const getClosestEventIndex = (events: IEvent[] | undefined) => {
     if (events) {
-      const currentDate = new Date().getTime();
+      const date = new Date();
+      date.setHours(0, 0, 0, 0);
+      const today = date.getTime();
+
       let nearestEventIndex = -1;
       let nearestEventDate = Infinity;
 
@@ -41,8 +44,7 @@ export default function NearestEvents(props: { tour: IYearEvents }) {
         const eventDate = new Date(
           event.date.split(".").reverse().join(".")
         ).getTime();
-
-        if (eventDate >= currentDate && eventDate < nearestEventDate) {
+        if (eventDate >= today && eventDate < nearestEventDate) {
           nearestEventIndex = i;
           nearestEventDate = eventDate;
         }

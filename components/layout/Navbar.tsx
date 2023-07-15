@@ -38,7 +38,6 @@ export default function Navbar() {
   useEffect(() => {
     const hash = window.location.hash.split("#")[1];
     const section = activeSectionHandler[hash];
-    console.log(section, hash);
     if (hash && section) {
       setActiveNavSection(section);
     }
