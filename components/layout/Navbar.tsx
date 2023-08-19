@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 export enum EActiveNavSection {
+  Null = 0,
   AboutBand = 1,
   Tour = 2,
   Contact = 3,
@@ -15,7 +16,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeNavSection, setActiveNavSection] = useState(
-    EActiveNavSection.Tour
+    EActiveNavSection.Null
   );
   const searchParams = useSearchParams();
 

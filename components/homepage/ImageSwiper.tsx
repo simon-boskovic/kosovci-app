@@ -41,6 +41,7 @@ export default function ImageSwiper(props: {
   return (
     <div className={styles["c-swiper-wrapper"]}>
       <Swiper
+        className={styles["c-swiper"]}
         ref={swiperRef}
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={50}
@@ -53,7 +54,10 @@ export default function ImageSwiper(props: {
           <SwiperSlide key={index}>
             <div
               className={styles["c-image-wrapper"]}
-              style={{ backgroundImage: `url(${imgObj.smallImage})` }}
+              style={{
+                backgroundImage: `url(${imgObj.smallImage})`,
+                borderRadius: "15px",
+              }}
             >
               <Image
                 ref={imageRef}
@@ -61,6 +65,7 @@ export default function ImageSwiper(props: {
                 className={styles["c-band-logo"]}
                 style={{
                   objectFit: "cover",
+                  borderRadius: "15px",
                 }}
                 src={imgObj.image}
                 alt="Band Image"

@@ -3,7 +3,7 @@ import styles from "../../styles/AboutBand.module.scss";
 export default function AboutBand() {
   return (
     <div>
-      <div className={styles["c-about-band-heading"]} id="o-kapele">
+      <div className={styles["c-about-band-heading"]}>
         <h2>O kapele</h2>
       </div>
       <div className={styles["c-about-band-text"]}>

@@ -58,8 +58,6 @@ export default function NearestEvents(props: { tour: IYearEvents }) {
     return undefined;
   };
 
-  // Zbytek kódu zůstává stejný
-
   events = getCurrentMonthEvents();
   closesEventIndex = getClosestEventIndex(events);
 

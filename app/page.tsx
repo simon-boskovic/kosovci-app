@@ -62,6 +62,10 @@ export default async function HomePage() {
           <NearestEvents tour={tour} />
         </div>
         <div className={styles["c-homepage-item-4"]}>
+          <div id="kde-hrajeme"> </div>
+          <div id="o-kapele"> </div>
+          <div id="kontakt"> </div>
+
           <ContentWrapper tour={tour}></ContentWrapper>
         </div>
         <div className={styles["c-homepage-item-5"]}>
